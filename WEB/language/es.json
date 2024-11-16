@@ -1,0 +1,73 @@
+{
+  "nav": ["DATOS", "CONSULTA", "MÉTODO"],
+  "intro": {
+    "title": "VALORANT STATISTICS",
+    "text": {
+      "paragraph1": "Este estudio se hizo puramente por fines de investigación, no se recolectaron datos personales. Los datos se pueden acceder desde la API del proyecto.",
+      "paragraph2": "En esta pagina puedes ver la información recolectada de manera sencilla e interactiva y puedes hacer consultas sobre datos en especifico o comparaciones entre ellos."
+    }
+  },
+  "query": {
+    "title": "CONSULTA",
+    "combinations": {
+      "title": "Combinaciones",
+      "form": {
+        "title": "Entrada",
+        "age": ["Menor de 16", "16 a 18", "19 a 21", "22 a 29", "30 a 39", "40 o mas"],
+        "occupation": ["Estudio", "Trabajo", "Ambas", "Ninguna"],
+        "gender": ["Hombre", "Mujer", "Otro", "Prefiero no decirlo"],
+        "peak": ["No juego rankeds", "HIERRO", "BRONCE", "PLATA", "ORO", "PLATINO", "DIAMANTE", "ASCENDENTE", "INMORTAL", "RADIANT"],
+        "submit": "Enviar"
+      },
+      "graph": {
+        "title": "Gráfica"
+      }
+    },
+    "comparison": {
+      "title": "Comparativa",
+      "form": {
+        "title": "Entrada",
+        "parameter": ["Edad", "Ocupación", "Genero", "Peak"],
+        "value": {
+          "Age": ["Menor de 16", "16 a 18", "19 a 21", "22 a 29", "30 a 39", "40 o mas"],
+          "Occupation": ["Estudio", "Trabajo", "Ambas", "Ninguna"],
+          "Gender": ["Hombre", "Mujer", "Otro", "Prefiero no decirlo"],
+          "Peak": ["No juego rankeds", "HIERRO", "BRONCE", "PLATA", "ORO", "PLATINO", "DIAMANTE", "ASCENDENTE", "INMORTAL", "RADIANT"]
+        },
+        "submit": "Enviar"
+      },
+      "graph": {
+        "title": "Gráfica"
+      }
+    }
+  },
+  "data": {
+    "title": "DATOS",
+    "top_combinations": {
+      "title": "TOP COMBINACIONES"
+    },
+    "charts": {
+      "title": "GRÁFICOS",
+      "AGE": "Edad",
+      "OCCUPATION": "Ocupación",
+      "GENDER": "Genero",
+      "PEAK": "Peak"
+    }
+  },
+  "method": {
+    "title": "MÉTODO",
+    "text": {
+      "paragraph1": "El estudio tenia que cumplir con tres puntos claves, la recolecion de datos, el analisis de los datos y la presentacion de los datos.",
+      "paragraph2": "Los datos se recolectaron mediante una encuesta de google forms, en la cual se le preguntaba a los jugadores su edad, ocupación, genero y el rango peak. Este método depende mucho de la honestidad de los jugadores, y por ende no se puede garantizar que los datos sean 100% veraces.",
+      "paragraph3": "El analisis de los datos se hizo muy simplificado para evitar el sesgo implicito que pudiera tener yo a la hora de elegir los datos, por lo que los datos presentados son muy genéricos.",
+      "paragraph4": "La presentacion de los datos es el motivo por el que se hizo este estudio, para que todos puedan acceder a la información de una manera sencilla e interactiva. Al otorgar a los usuarios el acceso a los datos y el poder hacer consultas sobre ellos, se da la opción de que cada uno saque sus conclusiones."
+    },
+    "contribution": {
+      "text": "Si quieres apoyar el proyecto y no sabes como, si todavía no hiciste la encuesta puedes hacerla a traves del siguiente enlace:",
+      "button": "Contribuir"
+    }
+  },
+  "footer": {
+    "copyright": "Copyright© 2023 Dtar380. Todos los derechos reservados."
+  }
+}

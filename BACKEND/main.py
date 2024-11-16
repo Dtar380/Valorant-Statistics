@@ -52,7 +52,7 @@ def get_column_table(column: str, return_type: str):
 
     return JSONResponse(content=response)
 
-@app.get("/query/{query_type}/{return_type}")
+@app.post("/query/{query_type}/{return_type}")
 def get_combination(query_type: str, return_type: str, conditions: dict):
     if query_type not in ["combination", "comparison"]:
         response = {
