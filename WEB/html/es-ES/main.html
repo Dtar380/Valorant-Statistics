@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <!-- HEAD -->
+  <head>
+
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="Estudio y analisis sobre la playerbase de valorant">
+    <meta name="keywords" content="Valorant, Estadística, Datos, Analisis, Presentación">
+    <meta name="author" content="Dtar380">
+
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <!-- BRANDING -->
+    <title>Valorant Statistics</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/icon.svg">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="../../js/main.js"></script>
+
+  </head>
+
+  <!-- BODY -->
+  <body>
+
+    <!-- NAV -->
+    <div id="nav">
+
+      <ul>
+        <li><a href="api.html">API</a></li>
+        <li><a href="#"><img src="../../assets/logo.svg"></a></li>
+        <li><a href="#query">ESTUDIO</a></li>
+      </ul>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content">
+
+      <!-- INTRO -->
+      <div id="intro">
+
+        <h1 class="title">VALORANT STATISTICS</h1>
+
+        <div class="text">
+          <p>
+            Este estudio se hizo puramente por fines de investigación, no se recolectaron
+             datos personales. Los datos se pueden acceder desde la API del proyecto.
+          </p>
+          <p>
+            En esta pagina puedes ver la información recolectada de manera sencilla e
+             interactiva y puedes hacer consultas sobre datos en especifico o comparaciones
+             entre ellos.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- QUERY -->
+      <div id="query">
+
+        <h1 class="title">CONSULTA</h1>
+
+        <div id="combinations">
+
+          <h2 class="title">Combinaciones</h2>
+
+          <div class="form">
+
+            <h3 class="title">Entrada</h3>
+
+            <form id="combination-form">
+
+              <!-- AGE -->
+              <label for="AGE">Edad</label>
+
+              <select name="AGE" id="age">
+                <option value="Under 16">Menor de 16</option>
+                <option value="16 to 18">16 a 18</option>
+                <option value="19 to 21">19 a 21</option>
+                <option value="22 to 29">22 a 29</option>
+                <option value="30 to 39">30 a 39</option>
+                <option value="40 or above">40 o más</option>
+              </select>
+
+              <!-- OCCUPATION -->
+              <label for="OCCUPATION">Ocupación</label>
+
+              <select name="OCCUPATION" id="occupation">
+                <option value="Study">Estudio</option>
+                <option value="Work">Trabajo</option>
+                <option value="Both">Ambas</option>
+                <option value="None">Ninguna</option>
+              </select>
+
+              <!-- GENDER -->
+              <label for="GENDER">Genero</label>
+
+              <select name="GENDER" id="gender">
+                <option value="Male">Hombre</option>
+                <option value="Female">Mujer</option>
+                <option value="Other">Otro</option>
+                <option value="Prefer not to say">Prefiero no decirlo</option>
+              </select>
+
+              <!-- PEAK -->
+              <label for="PEAK">Peak</label>
+
+              <select name="PEAK" id="peak">
+                <option value="I don't play ranked">No juego rankeds</option>
+                <option value="IRON">HIERRO</option>
+                <option value="BRONZE">BRONCE</option>
+                <option value="SILVER">PLATA</option>
+                <option value="GOLD">ORO</option>
+                <option value="PLATINUM">PLATINO</option>
+                <option value="DIAMOND">DIAMANTE</option>
+                <option value="ASCENDANT">ASCENDENTE</option>
+                <option value="INMO">INMORTAL</option>
+                <option value="RADIANT">RADIANT</option>
+              </select>
+
+            </form>
+
+          </div>
+
+          <div class="graph">
+
+            <h3 class="title">Gráfica</h3>
+
+            <div id="combination-graph"></div>
+
+          </div>
+
+        </div>
+
+        <div id="comparison">
+
+          <h2 class="title">Comparativa</h2>
+
+          <div class="form">
+
+            <h3 class="title">Entrada</h3>
+
+            <form id="comparison-form">
+
+              <!-- PARAMETER 1 -->
+              <label for="parameter-1">Parámetro 1</label>
+
+              <select name="parameter-1" id="parameter-1">
+                <option value="AGE">Edad</option>
+                <option value="OCCUPATION">Ocupación</option>
+                <option value="GENDER">Genero</option>
+                <option value="PEAK">Peak</option>
+              </select>
+
+              <!-- PARAMETER 2 -->
+              <label for="parameter-2">Parámetro 2</label>
+
+              <select name="parameter-2" id="parameter-2">
+              </select>
+
+              <!-- VALUE 1 -->
+              <label for="value-1">Valor 1</label>
+
+              <select name="value-1" id="value-1">
+              </select>
+
+            </form>
+
+          </div>
+
+          <div class="graph">
+
+            <h3 class="title">Gráfica</h3>
+
+            <div id="comparison-graph"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- DATA -->
+      <div id="data">
+
+        <h1 class="title">DATOS</h1>
+
+        <!-- TOP COMBINATIONS -->
+        <div id="top-combinations">
+
+          <h2 class="title">TOP COMBINACIONES</h2>
+
+          <div id="top-combination">
+
+            <div id="top-combination-name"></div>
+
+            <div id="top-combination-number"></div>
+
+          </div>
+
+        </div>
+
+        <!-- CHARTS -->
+        <div id="charts">
+
+          <h2 class="title">GRÁFICOS</h2>
+
+          <!-- AGE -->
+          <div id="age-chart-container">
+
+            <h3 class="title">Edad</h3>
+
+            <div id="age-chart"></div>
+
+          </div>
+
+          <!-- OCCUPATION -->
+          <div id="occupation-chart-container">
+
+            <h3 class="title">Ocupación</h3>
+
+            <div id="occupation-chart"></div>
+
+          </div>
+
+          <!-- GENDER -->
+          <div id="gender-chart-container">
+
+            <h3 class="title">Genero</h3>
+
+            <div id="gender-chart"></div>
+
+          </div>
+
+          <!-- PEAK -->
+          <div id="peak-chart-container">
+
+            <h3 class="title">Peak</h3>
+
+            <div id="peak-chart"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- METHOD -->
+      <div id="method">
+
+        <h1 class="title">MÉTODO</h1>
+
+        <div class="text">
+          <p>
+            El estudio tenia que cumplir con tres puntos claves, la recolecion de datos,
+             el analisis de los datos y la presentacion de los datos.
+          </p>
+          <p>
+            Los datos se recolectaron mediante una encuesta de google forms, en la cual se
+             le preguntaba a los jugadores su edad, ocupación, genero y el rango peak.
+             Este método depende mucho de la honestidad de los jugadores, y por ende no se
+             puede garantizar que los datos sean 100% veraces.
+          </p>
+          <p>
+            El analisis de los datos se hizo muy simplificado para evitar el sesgo
+             implicito que pudiera tener yo a la hora de elegir los datos, por lo que los
+             datos presentados son muy genéricos.
+          </p>
+          <p>
+            La presentacion de los datos es el motivo por el que se hizo este estudio,
+             para que todos puedan acceder a la información de una manera sencilla e
+             interactiva. Al otorgar a los usuarios el acceso a los datos y el poder hacer
+             consultas sobre ellos, se da la opción de que cada uno saque sus conclusiones.
+          </p>
+        </div>
+
+        <div id="contribution">
+
+          <div class="text">
+            <p>
+              Si quieres apoyar el proyecto y no sabes como, si todavía no hiciste la
+               encuesta puedes hacerla a traves del siguiente enlace:
+            </p>
+          </div>
+
+          <div class="button">
+            <a href="#">Contribuir</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+
+      <div id="top">
+
+        <!-- LOGO -->
+        <div id="logo">
+          <a href="main.html"><img src="../../assets/logo.svg"></a>
+        </div>
+
+        <!-- SOCIALS -->
+        <div id="socials">
+          <a href="https://github.com/Dtar380"><img src="../../assets/github.svg"></a>
+          <a href="https://youtube.com/@dtar380"><img src="../../assets/linkedin.svg"></a>
+          <a href="https://twitch.tv/dtar380_yt"><img src="../../assets/instagram.svg"></a>
+        </div>
+
+        <!-- LINKS -->
+        <div id="links">
+          <a href="api.html">API</a>
+          <a href="">Política de seguridad</a>
+          <a href="">Repositorio</a>
+        </div>
+
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div id="copyright">
+        Copyright© 2023 Dtar380. Todos los derechos reservados.
+      </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../js/query.js"></script>
+    <script type="text/javascript" src="../../js/language.js"></script>
+
+  </body>
+
+</html>
