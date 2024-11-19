@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from database_manager import DatabaseManager
 
 def get_url() -> str:
-    load_dotenv(".secrets")
+    load_dotenv()
 
     spreadsheet_ID: str = getenv("SPREADSHEET_ID")
     sheet_ID: str = getenv("SHEET_ID")
