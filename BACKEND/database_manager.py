@@ -11,8 +11,6 @@ class DatabaseManager:
     }
 
     def __init__(self, url: str):
-        print(self.column_values["OCCUPATION"])
-
         self.url = url
 
     @property
