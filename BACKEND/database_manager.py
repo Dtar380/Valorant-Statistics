@@ -1,6 +1,8 @@
 import pandas as pd
 from pandas import DataFrame
 
+import numpy as np
+
 class DatabaseManager:
 
     column_values: dict = {
@@ -11,11 +13,13 @@ class DatabaseManager:
     }
 
     def __init__(self, url: str):
+        print(self.column_values["OCCUPATION"])
+
         self.url = url
 
     @property
     def df(self) -> DataFrame:
-        df = pd.read_csv(self.url)
+        df = pd.read_csv(self.url, keep_default_na=False, na_values=['_'])
         return df.drop(columns=[df.columns[-1],df.columns[-2]])
 
     def data_amount(self, df: DataFrame = None) -> int:
