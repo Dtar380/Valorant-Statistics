@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 from os import getenv
 
+import uvicorn
+
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -85,5 +87,4 @@ def get_combination(query_type: str, return_type: str, conditions: dict):
     return JSONResponse(content=response)
 
 if __name__ == "__main__":
-    import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)

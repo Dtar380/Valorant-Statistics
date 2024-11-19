@@ -1,8 +1,6 @@
 import pandas as pd
 from pandas import DataFrame
 
-import numpy as np
-
 class DatabaseManager:
 
     column_values: dict = {
