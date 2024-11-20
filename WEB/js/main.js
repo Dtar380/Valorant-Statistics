@@ -12,21 +12,17 @@ function load_charts() {
     const charts = ["AGE", "OCCUPATION", "GENDER", "PEAK"]
 
     for (let i = 0; i < charts.length; i++) {
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart(charts[i]));
+        draw_Chartes(charts[i])
     }
 }
 
-function drawChart(column) {
-    console.log("La función drawChart() se está ejecutando");
-
+function draw_Chartes(column) {
     fetch('http://127.0.0.1:8000/statics/' + column + '/graph', {
         headers: {'Content-Type': 'application/json'},
         method: 'GET',
     })  // Ruta de la API en FastAPI
         .then(response => response.json())  // Parsear la respuesta como JSON
         .then(data => {
-            console.log(data);
 
             // Preparar los datos para la gráfica de Google Charts
             let chartData = [['Categoría', 'Valor']];
@@ -56,7 +52,8 @@ function drawChart(column) {
         .catch(error => console.error('Error al obtener los datos:', error));  // Manejar errores
 }
 
-window.onload = function() {
-    top_combination();
-    load_charts();
-}
+top_combination();
+
+google.charts.load('current', { 'packages': ['corechart'] });
+
+google.charts.setOnLoadCallback(load_charts);

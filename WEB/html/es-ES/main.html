@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 
   <!-- HEAD -->
   <head>
@@ -22,9 +22,11 @@
     <link rel="stylesheet" href="../../css/main.css">
 
     <!-- SCRIPTS -->
+    <script type="module" src="../../js/module.js"></script>
+
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script type="text/javascript" src="../../js/main.js"></script>
+    <script type="text/javascript" src="../../js/main.js" defer></script>
 
   </head>
 
@@ -106,6 +108,7 @@
               <label for="AGE">Edad</label>
 
               <select name="AGE" id="age">
+                <option value="Empty"></option>
                 <option value="Under 16">Menor de 16</option>
                 <option value="16 to 18">16 a 18</option>
                 <option value="19 to 21">19 a 21</option>
@@ -118,6 +121,7 @@
               <label for="OCCUPATION">Ocupación</label>
 
               <select name="OCCUPATION" id="occupation">
+                <option value="Empty"></option>
                 <option value="Study">Estudio</option>
                 <option value="Work">Trabajo</option>
                 <option value="Both">Ambas</option>
@@ -128,6 +132,7 @@
               <label for="GENDER">Genero</label>
 
               <select name="GENDER" id="gender">
+                <option value="Empty"></option>
                 <option value="Male">Hombre</option>
                 <option value="Female">Mujer</option>
                 <option value="Other">Otro</option>
@@ -138,7 +143,8 @@
               <label for="PEAK">Peak</label>
 
               <select name="PEAK" id="peak">
-                <option value="I don't play ranked">No juego rankeds</option>
+                <option value="Empty"></option>
+                <option value="I don't play ranked">No juego ranked</option>
                 <option value="IRON">HIERRO</option>
                 <option value="BRONZE">BRONCE</option>
                 <option value="SILVER">PLATA</option>
@@ -147,7 +153,7 @@
                 <option value="DIAMOND">DIAMANTE</option>
                 <option value="ASCENDANT">ASCENDENTE</option>
                 <option value="INMO">INMORTAL</option>
-                <option value="RADIANT">RADIANT</option>
+                <option value="RADIANT">RADIANTE</option>
               </select>
 
               <!-- SUBMIT -->
@@ -365,8 +371,9 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="../../js/query.js"></script>
+    <script type="text/javascript" src="../../js/query.js" defer></script>
     <script type="text/javascript" src="../../js/language.js"></script>
+    <script type="text/javascript" src="../../js/theme.js"></script>
 
   </body>
 

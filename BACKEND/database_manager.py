@@ -53,7 +53,7 @@ class DatabaseManager:
         filtered_df = df
 
         for col, value in conditions.items():
-            if value not in [None, ""]:
+            if value not in [None, "", "Empty"]:
                 filtered_df = filtered_df[filtered_df[col] == value]
 
         count = filtered_df.shape[0]
