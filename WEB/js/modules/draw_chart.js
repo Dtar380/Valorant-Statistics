@@ -1,4 +1,4 @@
-export function drawChart(data, chart_colors) {
+function draw_chart_(id, data, chart_colors) {
 
     // Preparar los datos para la gráfica de Google Charts
     let chartData = [['Categoría', 'Valor']];
@@ -22,6 +22,8 @@ export function drawChart(data, chart_colors) {
     }
 
     // Crear la gráfica y dibujarla
-    let chart = new google.visualization.PieChart(document.getElementById('combination-graph'));
+    let chart = new google.visualization.PieChart(document.getElementById(id));
     chart.draw(dataTable, options);
 }
+
+window.draw_chart = draw_chart_;

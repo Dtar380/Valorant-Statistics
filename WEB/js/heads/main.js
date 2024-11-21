@@ -12,42 +12,23 @@ function load_charts() {
     const charts = ["AGE", "OCCUPATION", "GENDER", "PEAK"]
 
     for (let i = 0; i < charts.length; i++) {
-        draw_Chartes(charts[i])
+        static_charts(charts[i])
     }
 }
 
-function draw_Chartes(column) {
+function static_charts(column) {
     fetch('http://127.0.0.1:8000/statics/' + column + '/graph', {
         headers: {'Content-Type': 'application/json'},
         method: 'GET',
     })  // Ruta de la API en FastAPI
         .then(response => response.json())  // Parsear la respuesta como JSON
         .then(data => {
-
-            // Preparar los datos para la gráfica de Google Charts
-            let chartData = [['Categoría', 'Valor']];
-            data.forEach(item => {
-                chartData.push(item);  // Añadir cada elemento al array
-            });
-
-            // Crear la DataTable para Google Charts
-            let dataTable = google.visualization.arrayToDataTable(chartData);
-
-            // Opciones para la gráfica (sin 3D)
-            let options = {
-                width: 400,
-                height: 400,
-                pieSliceText: "none",
-                legend: {position: 'none'}
-            };
-
-            if (column === "PEAK") {
-                options.colors = ["#4285F4","#535354","#885C09","#C0C3C4","#E8BC46","#3FAABC","#9861BB","#1E854F","#A52634","#F2F3E1"];
+            if (column == "PEAK") {
+                let colors = ["#4285F4","#535354","#885C09","#C0C3C4","#E8BC46","#3FAABC","#9861BB","#1E854F","#A52634","#F2F3E1"];
+                draw_chart(column.toLowerCase()+"-chart", data, colors)
+            } else {
+                draw_chart(column.toLowerCase()+"-chart", data, null)
             }
-
-            // Crear la gráfica y dibujarla
-            let chart = new google.visualization.PieChart(document.getElementById(column.toLowerCase()+"-chart"));
-            chart.draw(dataTable, options);
         })
         .catch(error => console.error('Error al obtener los datos:', error));  // Manejar errores
 }

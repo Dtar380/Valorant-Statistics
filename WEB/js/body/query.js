@@ -1,4 +1,4 @@
-import { drawChart } from "./drawChart";
+let url = "http://127.0.0.1:8000/query/";
 
 let selectedLang = localStorage.getItem("lang")
 
@@ -12,13 +12,6 @@ var value1_options = data["value1"];
 let combinationForm = document.getElementById("combination-form");
 // let comparisonForm = document.getElementById("comparison-form");
 
-function load_json(file_name) {
-    fetch("../langauges/" + file_name)
-    .then(response => response.json())
-    .then(data => {return data})
-    .catch(error => console.error("Unable to fetch data:", error));
-}
-
 document.addEventListener("DOMContentLoaded", function() {
 
     combinationForm.addEventListener("submit", (event) => {
@@ -29,20 +22,20 @@ document.addEventListener("DOMContentLoaded", function() {
         var GENDER = document.getElementById("gender").value;
         var PEAK = document.getElementById("peak").value;
 
-        var request = {
+        let request = {
             "AGE": AGE,
             "OCCUPATION": OCCUPATION,
             "GENDER": GENDER,
             "PEAK": PEAK
         };
 
-        fetch("http://127.0.0.1:8000/query/combination/graph", {
+        fetch(url+"combination/graph", {
             headers: {'Content-Type': 'application/json'},
             method: 'POST',
             body: JSON.stringify(request)
         })
         .then(response => response.json())
-        .then(data => drawChart(data, null))
+        .then(data => draw_chart('combination-graph', data, null))
         .catch(error => console.error('Error al obtener los datos:', error));
     });
 
@@ -60,17 +53,19 @@ document.addEventListener("DOMContentLoaded", function() {
             "value1": value1
         };
 
-        fetch("http://127.0.0.1:8000/query/comparison/graph", {
+        fetch(url+"comparison/graph", {
             headers: {'Content-Type': 'application/json'},
             method: 'POST',
             body: JSON.stringify(request)
         })
         .then(response => response.json())
-        .then(data => drawChart(data, null))
+        .then(data => draw_chart('comparison-graph', data, null))
         .catch(error => console.error('Error al obtener los datos:', error));
     });
     */
-
 });
 
 // ADD DYNAMIC FORM CREATOR
+function load_json(filename) {
+
+}
