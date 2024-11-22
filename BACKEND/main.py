@@ -32,6 +32,10 @@ app.add_middleware(
 def root():
     return JSONResponse(content={"status": "alive"})
 
+@app.get("/statics/data_amount")
+def get_data_amount():
+    return db.data_amount()
+
 @app.get("/statics/{column}/{return_type}")
 def get_column_table(column: str, return_type: str):
     if column not in db.columns():

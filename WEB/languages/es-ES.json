@@ -1,0 +1,42 @@
+{
+  "parameters": {
+    "AGE": "Edad",
+    "OCCUPATION": "Ocupación",
+    "GENDER": "Genero",
+    "PEAK": "Peak"
+  },
+  "values": {
+    "AGE": {
+      "Under 16": "Menor de 16",
+      "16 to 18": "16 a 18",
+      "19 to 21": "19 a 21",
+      "22 to 29": "22 a 29",
+      "30 to 39": "30 a 39",
+      "40 or above": "40 o más"
+    },
+    "OCCUPATION": {
+      "Study": "Estudio",
+      "Work": "Trabajo",
+      "Both": "Ambos",
+      "None": "Ninguno"
+    },
+    "GENDER": {
+      "Male": "Hombre",
+      "Female": "Mujer",
+      "Other": "Otro",
+      "Prefer not to say": "Prefiero no decirlo"
+    },
+    "PEAK": {
+      "I don't play ranked": "No juego ranked",
+      "IRON": "HIERRO",
+      "BRONZE": "BRONCE",
+      "SILVER": "PLATA",
+      "GOLD": "ORO",
+      "PLAT": "PLATINO",
+      "DIAMOND": "DIAMANTE",
+      "ASCENDANT": "ASCENDENTE",
+      "INMO": "INMORTAL",
+      "RADIANT": "RADIANTE"
+    }
+  }
+}
