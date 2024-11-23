@@ -11,24 +11,6 @@ if (selectedLang == null){
         localStorage.setItem("lang", "es-ES")
     }
 
-    // If language is french
-    else if (userLang.includes('fr')) {
-        window.location.replace("html/fr-FR/main.html")
-        localStorage.setItem("lang", "fr-FR")
-    }
-
-    // If language is portuguese
-    else if (userLang.includes('pt')) {
-        window.location.replace("html/pt-BR/main.html")
-        localStorage.setItem("lang", "pt-PT")
-    }
-
-    // If language is german
-    else if (userLang.includes('de')) {
-        window.location.replace("html/de-DE/main.html")
-        localStorage.setItem("lang", "de-DE")
-    }
-
     // Else
     else {
         // The language will be english
