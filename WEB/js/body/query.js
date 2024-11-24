@@ -1,6 +1,6 @@
 const url = "http://127.0.0.1:8000/query/";
-const selectedLang = localStorage.getItem("lang");
-const json_location = `../../languages/${selectedLang}.json`;
+const selected_lang = localStorage.getItem("lang");
+const json_location = `../../languages/${selected_lang}.json`;
 
 const data = load_JSON(json_location);
 const { parameters, values } = data;

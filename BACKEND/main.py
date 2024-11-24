@@ -60,6 +60,8 @@ def get_column_table(column: str, return_type: str):
 
 @app.post("/query/{query_type}/{return_type}")
 def get_combination(query_type: str, return_type: str, conditions: dict):
+    response: dict = None
+
     if query_type not in ["combination", "comparison"]:
         response = {
                 "ERROR": f"Query type {query_type} does not exist",
@@ -70,22 +72,42 @@ def get_combination(query_type: str, return_type: str, conditions: dict):
                 "ERROR": f"Return type {return_type} does not exist",
                 "FIX": "Use any of ['table', 'graph']"
             }
-
-    try:
-        if query_type == "combination":
-            table = db.query_combination(**conditions)
-        elif query_type == "comparison":
-            table = db.query_comparison(**conditions)
-
-        if return_type == "table":
-            response = table
-        elif return_type == "graph":
-            response = [[value[0], value[1]] for value in table]
-    except:
+    elif "ROW VALUE" in conditions:
         response = {
+            "ERROR": "Payload contained ROW VALUE as a column",
+            "FIX": f"Change your payload",
+            "PAYLOAD": conditions,
+        }
+
+    if not response:
+        try:
+            if query_type == "combination":
+                table = db.query_combination(**conditions)
+            elif query_type == "comparison":
+                table = db.query_comparison(**conditions)
+
+            if return_type == "table":
+                response = table
+            elif return_type == "graph":
+                response = [[value[0], value[1]] for value in table]
+        except:
+            response = {
                 "ERROR": "Payload was incorrect",
                 "FIX": f"Check your payload",
-                "PAYLOAD": conditions
+                "PAYLOAD": conditions,
+                "ACCEPTED PAYLOAD": {
+                    "combination": {
+                        "AGE": "value",
+                        "OCCUPATION": "value",
+                        "GENDER": "value",
+                        "PEAK": "value"
+                    },
+                    "comparison": {
+                        "parameter1": "column1",
+                        "parameter2": "column2",
+                        "value": "value_column2"
+                    }
+                }
             }
 
     return JSONResponse(content=response)

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-ES" theme="dark">
+<html lang="es-ES">
 
   <!-- HEAD -->
   <head>
@@ -21,10 +21,9 @@
     <!-- STYLES -->
     <link rel="stylesheet" href="../../css/main.css">
 
-    <!-- SCRIPTS -->
-    <script type="module" src="../../js/modules/load_json.js"></script>
-
+    <!-- MODULES -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/modules/load_json.js"></script>
 
   </head>
 
@@ -36,20 +35,20 @@
 
       <!-- LOGO -->
       <div id="logo">
-        <a href="main.html"><img src=""></a>
+        <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
       </div>
 
       <!-- LANGUAGE SELECTOR -->
       <div id="language-selector">
         <div class="button">
-          <img src="">
+          <img src="../../assets/icons/language-light.svg">
         </div>
       </div>
 
       <!-- THEME SWITCHER -->
       <div id="theme-switcher">
         <div class="button">
-          <img id="theme-icon" src="">
+          <img id="theme-icon" src="../../assets/icons/brightness-light.svg">
         </div>
       </div>
 
@@ -65,10 +64,12 @@
 
         <div class="text">
           <p>
-
+            Esta API se ha hecho publica para que todos puedan acceder a los datos recolectados.
+             La API es de uso libre y no necesita de claves para ser usada.
           </p>
           <p>
-
+            La API es la misma que se utiliza en esta pagina web, asi que puedes obtener los
+             datos de la misma manera en la que se disponen en la pagina web.
           </p>
         </div>
 
@@ -79,13 +80,88 @@
 
         <h1 class="title">STATICS</h1>
 
-        <div class="text">
+        <!-- EXPLANATION -->
+        <div class="explanation">
+
+          <!-- EXPLANATION -->
+          <p>
+            La ruta "statics" se utiliza para obtener los datos estaticos de la API.
+             Estos son datos no relacionales, es decir, datos de columnas especificas.
+          </p>
+
+          <!-- HEADER -->
           <p>
 
-          </p>
-          <p>
+            <h4 class="title">Encabezados</h4>
+
+            <div class="table">
+
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">Content-Type</code>
+                  <span class="varType">string</span>
+                </div>
+
+              </div>
+
+            </div>
 
           </p>
+
+          <!-- PARAMETERS -->
+          <p>
+
+            <h4 class="title">Parametros de ruta</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">column</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El parametro "column" corresponde a una de las 5 columnas existentes.
+                   Estas son:
+                  <ul>
+                    <li>AGE</li>
+                    <li>OCCUPATION</li>
+                    <li>GENDER</li>
+                    <li>PEAK</li>
+                    <li>ROW VALUE</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">return_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El parametro "return_type" corresponde a la forma de devolver los datos.
+                   Estas son:
+                  <ul>
+                    <li>table: devuelve la tabla al completo</li>
+                    <li>graph: devuelve la tabla preparada para graficar</li>
+                    <li>mode: devuelve el valor mas frecuente</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
         </div>
 
         <!-- CODE BOX -->
@@ -123,7 +199,7 @@
 
             <div class="selector">
               <ul>
-                <li id="example" class="request">Ejemplo</li>
+                <li id="example"  class="highlight">Ejemplo</li>
                 <li id="template">Modelo</li>
               </ul>
             </div>
@@ -145,13 +221,130 @@
 
         <h1 class="title">QUERY</h1>
 
-        <div class="text">
+        <!-- EXPLANATION -->
+        <div class="explanation">
+
+          <!-- EXPLANATION -->
+          <p>
+            La ruta "query" se utiliza para hacer consultas a la API.
+             Las consultas devuelven datos relacionales siempre debido a como funcionan.
+          </p>
+
+          <!-- HEADER -->
           <p>
 
-          </p>
-          <p>
+            <h4 class="title">Encabezados</h4>
+
+            <div class="table">
+
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">Content-Type</code>
+                  <span class="varType">string</span>
+                </div>
+
+              </div>
+
+            </div>
 
           </p>
+
+          <!-- PARAMETERS -->
+          <p>
+
+            <h4 class="title">Parametros de ruta</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">query_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El parametro "query_type" corresponde al tipo de consulta que se va a realizar.
+                   Estas son:
+                  <ul>
+                    <li>Combination: Combinar una cantidad de datos</li>
+                    <li>Comparison: Comparar dos columnas acorde a un dato</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">return_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El parametro "return_type" corresponde a la forma de devolver los datos.
+                   Estas son:
+                  <ul>
+                    <li>table: devuelve la tabla al completo</li>
+                    <li>graph: devuelve la tabla preparada para graficar</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+          <!-- PAYLOAD -->
+          <p>
+
+            <h4 class="title">Parametros de carga</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">column</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El valor "column" del payload corresponde al nombre de la columna que se quiere consultar.
+                   Estas son:
+                  <ul>
+                    <li>AGE</li>
+                    <li>OCCUPATION</li>
+                    <li>GENDER</li>
+                    <li>PEAK</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">value</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  El valor "value" del payload corresponde al valor que se quiere consultar.
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
         </div>
 
         <!-- CODE BOX -->
@@ -168,7 +361,7 @@
 
             <div class="selector">
               <ul>
-                <li id="curl" class="request">cURL</li>
+                <li id="curl" class="highlight">cURL</li>
                 <li id="javascript">JavaScript</li>
                 <li id="python">Python</li>
               </ul>
@@ -189,7 +382,7 @@
 
             <div class="selector">
               <ul>
-                <li id="example" class="request">Ejemplo</li>
+                <li id="example" class="highlight">Ejemplo</li>
                 <li id="template">Modelo</li>
               </ul>
             </div>
@@ -215,14 +408,14 @@
 
         <!-- LOGO -->
         <div id="logo">
-          <a href="main.html"><img src=""></a>
+          <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
         </div>
 
         <!-- SOCIALS -->
         <div id="socials">
-          <a href="https://github.com/Dtar380"><img src=""></a>
-          <a href="https://youtube.com/@dtar380"><img src=""></a>
-          <a href="https://twitch.tv/dtar380_yt"><img src=""></a>
+          <a href="https://github.com/Dtar380"><img src="../../assets/icons/github-light.svg"></a>
+          <a href="https://youtube.com/@dtar380"><img src="../../assets/icons/youtube-light.svg"></a>
+          <a href="https://twitch.tv/dtar380_yt"><img src="../../assets/icons/twitch-light.svg"></a>
         </div>
 
         <!-- LINKS -->

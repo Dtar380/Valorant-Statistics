@@ -1,7 +1,6 @@
 const json_location = `../../languages/code.json`;
 
-const loaded = load_JSON(json_location);
-const { data } = loaded;
+const data = load_JSON(json_location);
 
 /**********************
 ****    STATICS    ****
@@ -11,12 +10,12 @@ const { data } = loaded;
 const statics = document.getElementById("statics");
 
 // TYPES
-const statics_request = statics.getElementById("request");
-const statics_response = statics.getElementById("response");
+const statics_request = statics.querySelector(".request");
+const statics_response = statics.querySelector(".response");
 
 // FORMS
-const statics_request_selector = statics_request.querySelector("#selector ul");
-const statics_response_selector = statics_response.querySelector("#selector ul");
+const statics_request_selector = statics_request.querySelector(".selector ul");
+const statics_response_selector = statics_response.querySelector(".selector ul");
 
 /**********************
 ****    QUERY      ****
@@ -26,12 +25,12 @@ const statics_response_selector = statics_response.querySelector("#selector ul")
 const query = document.getElementById("query");
 
 // TYPES
-const query_request = query.getElementById("request");
-const query_response = query.getElementById("response");
+const query_request = query.querySelector(".request");
+const query_response = query.querySelector(".response");
 
 // FORMS
-const query_request_selector = query_request.querySelector("#selector ul");
-const query_response_selector = query_response.querySelector("#selector ul");
+const query_request_selector = query_request.querySelector(".selector ul");
+const query_response_selector = query_response.querySelector(".selector ul");
 
 /**********************
 ****    UTILS     *****
@@ -39,7 +38,7 @@ const query_response_selector = query_response.querySelector("#selector ul");
 
 // Fills with the selected language the code block
 function fill_code(item, code, language) {
-    let code_block = item.getElementById("code"); // Get code block
+    let code_block = item.querySelector("#code"); // Get code block
 
     code_block.innerHTML = code; // Fill with code
     if (language != "json"){
@@ -61,7 +60,7 @@ function get_selected(item, selector) {
 }
 
 // Changes the selected langauge
-function action(item, target) {
+function change_selected(item, target) {
     // Remove highlight from old selection
     item.querySelector(".highlight").classList.remove("highlight");
     // Add highlight to new selection
@@ -107,3 +106,8 @@ query_response_selector.addEventListener("click", (event) => {
     change_selected(item, event.target);
     get_selected(item, selector);
 });
+
+get_selected(statics_request, "statics-request");
+get_selected(statics_response, "statics-response");
+get_selected(query_request, "query-request");
+get_selected(query_response, "query-response");

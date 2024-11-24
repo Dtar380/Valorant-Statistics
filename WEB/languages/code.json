@@ -1,24 +1,143 @@
 {
   "statics": {
     "request": {
-      "curl": "",
-      "javascript": "",
-      "python": ""
+      "curl": [
+        "curl -X GET \\",
+        "    -H 'Content-Type: application/json \\'",
+        "    'url/statics/AGE/table'"
+      ],
+      "javascript": [
+        "fetch('url/statics/AGE/table', {",
+        "    method: 'GET',",
+        "    headers: {'Content-Type': 'application/json'}",
+        "})",
+        ".then(response => {",
+        "    if (!response.ok) {",
+        "        throw new Error(`HTTP error! status: ${response.status}`);",
+        "    }",
+        "    return response.json();",
+        "})",
+        ".then(data => console.log(data))",
+        ".catch(error => console.error('Error:', error));"
+      ],
+      "python": [
+        "import urllib.request",
+        "",
+        "try:",
+        "    req = urllib.request.Request(",
+        "        'url/statics/AGE/table',",
+        "        method='GET',",
+        "        headers={'Content-Type': 'application/json'}",
+        "    )",
+        "",
+        "    response = urllib.request.urlopen(req)",
+        "    print(response.read().decode())",
+        "",
+        "except Exception as e:",
+        "    print(e)"
+      ]
     },
     "response": {
-      "example": "",
-      "template": ""
+      "example": [
+        "[",
+        "  ['Under 16', 167, 10.91],",
+        "  ['16 to 18', 454, 29.65],",
+        "  ['19 to 21', 387, 25.28],",
+        "  ['22 to 29', 442, 28.87],",
+        "  ['30 to 39', 74, 4.83],",
+        "  ['40 or above', 7, 0.46]",
+        "]"
+      ],
+      "template": [
+        "// Table",
+        "[",
+        "  [value1, amount, percentage]",
+        "  [value2, amount, percentage]",
+        "]",
+        "",
+        "// Graph",
+        "[",
+        "  [value1, amount]",
+        "  [value2, amount]",
+        "]",
+        "",
+        "// Mode",
+        "[value, amount, percentage]"
+      ]
     }
   },
   "query": {
     "request": {
-      "curl": "",
-      "javascript": "",
-      "python": ""
+      "curl": [
+        "curl -X POST \\",
+        "    -H 'Content-Type: application/json \\'",
+        "    -d '{\"AGE\": \"16 to 18\",\"OCCUPATION\": \"Study\",\"GENDER\": \"Male\",\"PEAK\": \"GOLD\"}' \\",
+        "    'url/query/combination/table'"
+      ],
+      "javascript": [
+        "fetch('url/query/combination/table', {",
+        "    method: 'POST',",
+        "    headers: {'Content-Type': 'application/json'},",
+        "    body: JSON.stringify({",
+        "        'AGE': '16 to 18',",
+        "        'OCCUPATION': 'Study',",
+        "        'GENDER': 'Male',",
+        "        'PEAK': 'GOLD'",
+        "    })",
+        "})",
+        ".then(response => {",
+        "    if (!response.ok) {",
+        "        throw new Error(`HTTP error! status: ${response.status}`);",
+        "    }",
+        "    return response.json();",
+        "})",
+        ".then(data => console.log(data))",
+        ".catch(error => console.error('Error:', error));"
+      ],
+      "python": [
+        "import urllib.request",
+        "import json",
+        "",
+        "try:",
+        "    req = urllib.request.Request(",
+        "        'url/query/combination/table',",
+        "        method='POST',",
+        "        headers={'Content-Type': 'application/json'},",
+        "        body=json.dumps({",
+        "            'AGE': '16 to 18',",
+        "            'OCCUPATION': 'Study',",
+        "            'GENDER': 'Male',",
+        "            'PEAK': 'GOLD'",
+        "        }).encode('utf-8')",
+        "    )",
+        "",
+        "    response = urllib.request.urlopen(req)",
+        "    print(response.read().decode())",
+        "",
+        "except Exception as e:",
+        "    print(e)"
+      ]
     },
     "response": {
-      "example": "",
-      "template": ""
+      "example": [
+        "[",
+        "  ['COMBINATION', 62, 4.05]",
+        "  ['REST', 1469, 95.95]",
+        "]"
+      ],
+      "template": [
+        "// Combination",
+        "[",
+        "  ['COMBINATION', amount, percentage]",
+        "  ['REST', amount, percentage]",
+        "]",
+        "",
+        "// Comparison",
+        "[",
+        "  [value1, amount, percentage]",
+        "  [value2, amount, percentage]",
+        "]"
+      ]
     }
   }
 }
