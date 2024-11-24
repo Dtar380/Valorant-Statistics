@@ -1,0 +1,24 @@
+{
+  "statics": {
+    "request": {
+      "curl": "",
+      "javascript": "",
+      "python": ""
+    },
+    "response": {
+      "example": "",
+      "template": ""
+    }
+  },
+  "query": {
+    "request": {
+      "curl": "",
+      "javascript": "",
+      "python": ""
+    },
+    "response": {
+      "example": "",
+      "template": ""
+    }
+  }
+}

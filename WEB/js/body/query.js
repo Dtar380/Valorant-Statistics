@@ -2,20 +2,7 @@ const url = "http://127.0.0.1:8000/query/";
 const selectedLang = localStorage.getItem("lang");
 const json_location = `../../languages/${selectedLang}.json`;
 
-// Synchronously load the JSON data
-function loadJSONSync(url) {
-    const request = new XMLHttpRequest();
-    request.open('GET', url, false); // false makes it synchronous
-    request.send(null);
-
-    if (request.status === 200) {
-        return JSON.parse(request.responseText);
-    } else {
-        throw new Error(`Failed to load JSON: ${request.status}`);
-    }
-}
-
-const data = loadJSONSync(json_location);
+const data = load_JSON(json_location);
 const { parameters, values } = data;
 
 const combinationForm = document.getElementById("combination-form");

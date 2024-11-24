@@ -1,6 +1,6 @@
-var button = document.getElementById("theme-switcher");
-var html = document.querySelector("html");
-var img = document.getElementsByTagName("img");
+const button = document.getElementById("theme-switcher");
+const img = document.getElementsByTagName("img");
+const html = document.querySelector("html");
 
 value = localStorage.getItem("selectedTheme");
 

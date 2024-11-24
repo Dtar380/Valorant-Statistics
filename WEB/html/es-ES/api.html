@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="../../css/main.css">
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="module" src="../../js/modules/load_json.js"></script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script type="text/javascript" src="../../js/heads/api.js"></script>
 
   </head>
 
@@ -41,21 +41,9 @@
 
       <!-- LANGUAGE SELECTOR -->
       <div id="language-selector">
-
-        <!-- BUTTON -->
         <div class="button">
           <img src="">
         </div>
-
-        <!-- LANGUAGES -->
-        <ul class="languages">
-          <li class="de">Deutsch</li>
-          <li class="en">English</li>
-          <li class="es">Español</li>
-          <li class="fr">Français</li>
-          <li class="pt">Português</li>
-        </ul>
-
       </div>
 
       <!-- THEME SWITCHER -->
@@ -100,7 +88,53 @@
           </p>
         </div>
 
+        <!-- CODE BOX -->
         <div class="code-box">
+
+          <h3 class="title">Ejemplos de código para "Static"</h3>
+
+          <!-- CODE TO USE -->
+          <div class="request">
+
+            <h3 class="title">Ejemplos de solicitud</h3>
+
+            <h4 class="route">"/statics/{column}/{return_type}"</h4>
+
+            <div class="selector">
+              <ul>
+                <li id="curl" class="highlight">cURL</li>
+                <li id="javascript">JavaScript</li>
+                <li id="python">Python</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code">
+
+              </code>
+            </pre>
+
+          </div>
+
+          <!-- RESPONSE -->
+          <div class="response">
+
+            <h3 class="title">Ejemplos de respuesta</h3>
+
+            <div class="selector">
+              <ul>
+                <li id="example" class="request">Ejemplo</li>
+                <li id="template">Modelo</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code" class="json">
+
+              </code>
+            </pre>
+
+          </div>
 
         </div>
 
@@ -120,7 +154,53 @@
           </p>
         </div>
 
+        <!-- CODE BOX -->
         <div class="code-box">
+
+          <h3 class="title">Ejemplos de código para "Query"</h3>
+
+          <!-- CODE TO USE -->
+          <div class="request">
+
+            <h3 class="title">Ejemplos de solicitud</h3>
+
+            <h4 class="route">POST: "/query/{query_type}/{return_type}"</h4>
+
+            <div class="selector">
+              <ul>
+                <li id="curl" class="request">cURL</li>
+                <li id="javascript">JavaScript</li>
+                <li id="python">Python</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code">
+
+              </code>
+            </pre>
+
+          </div>
+
+          <!-- RESPONSE -->
+          <div class="response">
+
+            <h3 class="title">Ejemplos de respuesta</h3>
+
+            <div class="selector">
+              <ul>
+                <li id="example" class="request">Ejemplo</li>
+                <li id="template">Modelo</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code" class="json">
+
+              </code>
+            </pre>
+
+          </div>
 
         </div>
 
@@ -162,6 +242,7 @@
     </div>
 
     <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../js/body/api.js"></script>
     <script type="text/javascript" src="../../js/body/language.js"></script>
     <script type="text/javascript" src="../../js/body/theme.js"></script>
 
