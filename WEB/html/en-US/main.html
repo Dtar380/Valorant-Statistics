@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <!-- HEAD -->
+  <head>
+
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="Study and analysis on the Valorant playerbase">
+    <meta name="keywords" content="Valorant, Statistics, Data, Analysis, Presentation">
+    <meta name="author" content="Dtar380">
+
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <!-- BRANDING -->
+    <title>Valorant Statistics</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo.svg">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- MODULES -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript" src="../../js/modules/draw_chart.js"></script>
+    <script type="text/javascript" src="../../js/modules/load_json.js"></script>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../js/heads/main.js" defer></script>
+
+  </head>
+
+  <!-- BODY -->
+  <body>
+
+    <!-- NAV -->
+    <div id="nav">
+
+      <!-- LOGO -->
+      <div id="logo">
+        <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
+      </div>
+
+      <!-- LANGUAGE SELECTOR -->
+      <div id="language-selector">
+        <div class="button">
+          <img src="../../assets/icons/language-light.svg">
+        </div>
+      </div>
+
+      <!-- THEME SWITCHER -->
+      <div id="theme-switcher">
+        <div class="button">
+          <img id="theme-icon" src="../../assets/icons/brightness-light.svg">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content">
+
+      <!-- INTRO -->
+      <div id="intro">
+
+        <h1 class="title">VALORANT STATISTICS</h1>
+
+        <div class="text">
+          <p>
+            This study was conducted purely for research purposes, and no personal data
+             was collected. The data is accessible from the project's <a href="api.html">API</a>.
+          </p>
+          <p>
+            On this page, you can view the collected information in a simple and interactive
+             way, and you can make specific queries or comparisons between the data.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- QUERY -->
+      <div id="query">
+
+        <h1 class="title">QUERY</h1>
+
+        <div id="combinations">
+
+          <h2 class="title">Combinations</h2>
+
+          <div class="form">
+
+            <h3 class="title">Input</h3>
+
+            <form id="combination-form">
+
+              <!-- AGE -->
+              <label for="AGE">Age</label>
+
+              <select name="AGE" id="age">
+                <option value="Empty"></option>
+                <option value="Under 16">Under 16</option>
+                <option value="16 to 18">16 to 18</option>
+                <option value="19 to 21">19 to 21</option>
+                <option value="22 to 29">22 to 29</option>
+                <option value="30 to 39">30 to 39</option>
+                <option value="40 or above">40 or above</option>
+              </select>
+
+              <!-- OCCUPATION -->
+              <label for="OCCUPATION">Occupation</label>
+
+              <select name="OCCUPATION" id="occupation">
+                <option value="Empty"></option>
+                <option value="Study">Study</option>
+                <option value="Work">Work</option>
+                <option value="Both">Both</option>
+                <option value="None">None</option>
+              </select>
+
+              <!-- GENDER -->
+              <label for="GENDER">Gender</label>
+
+              <select name="GENDER" id="gender">
+                <option value="Empty"></option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+
+              <!-- PEAK -->
+              <label for="PEAK">Peak</label>
+
+              <select name="PEAK" id="peak">
+                <option value="Empty"></option>
+                <option value="I don't play ranked">I don't play ranked</option>
+                <option value="IRON">IRON</option>
+                <option value="BRONZE">BRONZE</option>
+                <option value="SILVER">SILVER</option>
+                <option value="GOLD">GOLD</option>
+                <option value="PLAT">PLAT</option>
+                <option value="DIAMOND">DIAMOND</option>
+                <option value="ASCENDANT">ASCENDANT</option>
+                <option value="INMO">IMMORTAL</option>
+                <option value="RADIANT">RADIANT</option>
+              </select>
+
+            </form>
+
+          </div>
+
+          <div class="graph">
+
+            <h3 class="title">Graph</h3>
+
+            <div id="combination-graph"></div>
+
+          </div>
+
+        </div>
+
+        <div id="comparison">
+
+          <h2 class="title">Comparison</h2>
+
+          <div class="form">
+
+            <h3 class="title">Input</h3>
+
+            <form id="comparison-form">
+
+              <!-- PARAMETER 1 -->
+              <label for="parameter-1">Parameter 1</label>
+
+              <select name="parameter-1" id="parameter-1">
+                <option value="Empty"></option>
+                <option value="AGE">Age</option>
+                <option value="OCCUPATION">Occupation</option>
+                <option value="GENDER">Gender</option>
+                <option value="PEAK">Peak</option>
+              </select>
+
+              <!-- PARAMETER 2 -->
+              <label for="parameter-2">Parameter 2</label>
+
+              <select name="parameter-2" id="parameter-2">
+                <option value="Empty"></option>
+              </select>
+
+              <!-- VALUE 1 -->
+              <label for="value-1">Value 1</label>
+
+              <select name="value-1" id="value-1">
+                <option value="Empty"></option>
+              </select>
+
+            </form>
+
+          </div>
+
+          <div class="graph">
+
+            <h3 class="title">Graph</h3>
+
+            <div id="comparison-graph"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- DATA -->
+      <div id="data">
+
+        <h1 class="title">DATA</h1>
+
+        <!-- TOP COMBINATIONS -->
+        <div id="top-combinations">
+
+          <h2 class="title">TOP COMBINATION</h2>
+
+          <div id="top-combination">
+
+            <div id="top-combination-name"></div>
+
+            <div id="top-combination-number"></div>
+
+          </div>
+
+        </div>
+
+        <!-- CHARTS -->
+        <div id="charts">
+
+          <h2 class="title">CHARTS</h2>
+
+          <!-- AGE -->
+          <div id="age-chart-container">
+
+            <h3 class="title">Age</h3>
+
+            <div id="age-chart"></div>
+
+          </div>
+
+          <!-- OCCUPATION -->
+          <div id="occupation-chart-container">
+
+            <h3 class="title">Occupation</h3>
+
+            <div id="occupation-chart"></div>
+
+          </div>
+
+          <!-- GENDER -->
+          <div id="gender-chart-container">
+
+            <h3 class="title">Gender</h3>
+
+            <div id="gender-chart"></div>
+
+          </div>
+
+          <!-- PEAK -->
+          <div id="peak-chart-container">
+
+            <h3 class="title">Peak</h3>
+
+            <div id="peak-chart"></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- METHOD -->
+      <div id="method">
+
+        <h1 class="title">METHOD</h1>
+
+        <div class="text">
+          <p>
+            The study had to fulfill three key points: data collection, data analysis, and
+             data presentation.
+          </p>
+          <p>
+            The data was collected through a Google Forms survey, in which players were
+             asked about their age, occupation, gender, and peak rank. This method relies
+             heavily on players' honesty, so the data cannot be guaranteed to be 100% accurate.
+          </p>
+          <p>
+            The data analysis was simplified to avoid implicit bias that I might have when
+             choosing the data. As a result, the presented data is very generic.
+          </p>
+          <p>
+            Data presentation is the reason for this study: to make the information accessible
+             in a simple and interactive way. By giving users access to the data and the
+             ability to make queries, they are empowered to draw their own conclusions.
+          </p>
+        </div>
+
+        <div id="contribution">
+
+          <div class="text">
+            <p>
+              If you want to support the project and don't know how, if you haven't taken
+               the survey yet, you can do so through the following link:
+            </p>
+          </div>
+
+          <div class="button">
+            <a href="https://forms.gle/1AadPyMJZWHNhqcD7">Contribute</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+
+      <div id="top">
+
+        <!-- LOGO -->
+        <div id="logo">
+          <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
+        </div>
+
+        <!-- SOCIALS -->
+        <div id="socials">
+          <a href="https://github.com/Dtar380"><img src="../../assets/icons/github-light.svg"></a>
+          <a href="https://youtube.com/@dtar380"><img src="../../assets/icons/youtube-light.svg"></a>
+          <a href="https://twitch.tv/dtar380_yt"><img src="../../assets/icons/twitch-light.svg"></a>
+        </div>
+
+        <!-- LINKS -->
+        <div id="links">
+          <a href="api.html">API</a>
+          <a href="https://github.com/Dtar380/Valorant-Statistics/blob/main/SECURITY.md">Security Policy</a>
+          <a href="https://github.com/Dtar380/Valorant-Statistics">Repository</a>
+        </div>
+
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div id="copyright">
+        Copyright© 2023 Dtar380. All rights reserved.
+      </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../js/body/query.js" defer></script>
+    <script type="text/javascript" src="../../js/body/language.js"></script>
+    <script type="text/javascript" src="../../js/body/theme.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <!-- HEAD -->
+  <head>
+
+    <!-- METADATA -->
+    <meta charset="utf-8">
+    <meta name="description" content="API for the Valorant playerbase statistical study">
+    <meta name="keywords" content="Valorant, Statistics, Data, Analysis, API">
+    <meta name="author" content="Dtar380">
+
+    <!-- VIEWPORT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+
+    <!-- BRANDING -->
+    <title>Valorant Statistics</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/logo/logo.svg">
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- MODULES -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="../../js/modules/load_json.js"></script>
+
+  </head>
+
+  <!-- BODY -->
+  <body>
+
+    <!-- NAV -->
+    <div id="nav">
+
+      <!-- LOGO -->
+      <div id="logo">
+        <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
+      </div>
+
+      <!-- LANGUAGE SELECTOR -->
+      <div id="language-selector">
+        <div class="button">
+          <img src="../../assets/icons/language-light.svg">
+        </div>
+      </div>
+
+      <!-- THEME SWITCHER -->
+      <div id="theme-switcher">
+        <div class="button">
+          <img id="theme-icon" src="../../assets/icons/brightness-light.svg">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div id="content">
+
+      <!-- INTRO -->
+      <div id="intro">
+
+        <h1 class="title">API</h1>
+
+        <div class="text">
+          <p>
+            This API has been made public so everyone can access the collected data.
+             The API is free to use and does not require keys.
+          </p>
+          <p>
+            The API is the same as the one used on this website, so you can retrieve the data
+             in the same way as it's presented on the website.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- STATICS -->
+      <div id="statics">
+
+        <h1 class="title">STATICS</h1>
+
+        <!-- EXPLANATION -->
+        <div class="explanation">
+
+          <!-- EXPLANATION -->
+          <p>
+            The "statics" route is used to retrieve static data from the API.
+             These are non-relational data, meaning data from specific columns.
+          </p>
+
+          <!-- HEADER -->
+          <p>
+
+            <h4 class="title">Headers</h4>
+
+            <div class="table">
+
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">Content-Type</code>
+                  <span class="varType">string</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+          <!-- PARAMETERS -->
+          <p>
+
+            <h4 class="title">Route Parameters</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">column</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "column" parameter corresponds to one of the 5 existing columns.
+                   These are:
+                  <ul>
+                    <li>AGE</li>
+                    <li>OCCUPATION</li>
+                    <li>GENDER</li>
+                    <li>PEAK</li>
+                    <li>ROW VALUE</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">return_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "return_type" parameter corresponds to how the data will be returned.
+                   These are:
+                  <ul>
+                    <li>table: returns the entire table</li>
+                    <li>graph: returns the table prepared for graphing</li>
+                    <li>mode: returns the most frequent value</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+        </div>
+
+        <!-- CODE BOX -->
+        <div class="code-box">
+
+          <h3 class="title">Code Examples for "Static"</h3>
+
+          <!-- CODE TO USE -->
+          <div class="request">
+
+            <h3 class="title">Request Examples</h3>
+
+            <h4 class="route">"/statics/{column}/{return_type}"</h4>
+
+            <div class="selector">
+              <ul>
+                <li id="curl" class="highlight">cURL</li>
+                <li id="javascript">JavaScript</li>
+                <li id="python">Python</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code">
+
+              </code>
+            </pre>
+
+          </div>
+
+          <!-- RESPONSE -->
+          <div class="response">
+
+            <h3 class="title">Response Examples</h3>
+
+            <div class="selector">
+              <ul>
+                <li id="example"  class="highlight">Example</li>
+                <li id="template">Template</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code" class="json">
+
+              </code>
+            </pre>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- QUERY -->
+      <div id="query">
+
+        <h1 class="title">QUERY</h1>
+
+        <!-- EXPLANATION -->
+        <div class="explanation">
+
+          <!-- EXPLANATION -->
+          <p>
+            The "query" route is used to make queries to the API.
+             Queries always return relational data due to how they work.
+          </p>
+
+          <!-- HEADER -->
+          <p>
+
+            <h4 class="title">Headers</h4>
+
+            <div class="table">
+
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">Content-Type</code>
+                  <span class="varType">string</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+          <!-- PARAMETERS -->
+          <p>
+
+            <h4 class="title">Route Parameters</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">query_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "query_type" parameter corresponds to the type of query being made.
+                   These are:
+                  <ul>
+                    <li>Combination: Combine a set of data</li>
+                    <li>Comparison: Compare two columns based on a data point</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">return_type</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "return_type" parameter corresponds to how the data will be returned.
+                   These are:
+                  <ul>
+                    <li>table: returns the entire table</li>
+                    <li>graph: returns the table prepared for graphing</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+          <!-- PAYLOAD -->
+          <p>
+
+            <h4 class="title">Payload Parameters</h4>
+
+            <div class="table">
+
+              <!-- ROW 1 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">column</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "column" value in the payload corresponds to the name of the column you want to query.
+                   These are:
+                  <ul>
+                    <li>AGE</li>
+                    <li>OCCUPATION</li>
+                    <li>GENDER</li>
+                    <li>PEAK</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <!-- ROW 2 -->
+              <div class="sub-table">
+
+                <div>
+                  <code class="code-text">value</code>
+                  <span class="varType">string</span>
+                </div>
+
+                <div>
+                  The "value" in the payload corresponds to the value you want to query.
+                </div>
+
+              </div>
+
+            </div>
+
+          </p>
+
+        </div>
+
+        <!-- CODE BOX -->
+        <div class="code-box">
+
+          <h3 class="title">Code Examples for "Query"</h3>
+
+          <!-- CODE TO USE -->
+          <div class="request">
+
+            <h3 class="title">Request Examples</h3>
+
+            <h4 class="route">POST: "/query/{query_type}/{return_type}"</h4>
+
+            <div class="selector">
+              <ul>
+                <li id="curl" class="highlight">cURL</li>
+                <li id="javascript">JavaScript</li>
+                <li id="python">Python</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code">
+
+              </code>
+            </pre>
+
+          </div>
+
+          <!-- RESPONSE -->
+          <div class="response">
+
+            <h3 class="title">Response Examples</h3>
+
+            <div class="selector">
+              <ul>
+                <li id="example" class="highlight">Example</li>
+                <li id="template">Template</li>
+              </ul>
+            </div>
+
+            <pre>
+              <code id="code" class="json">
+
+              </code>
+            </pre>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+
+      <div id="top">
+
+        <!-- LOGO -->
+        <div id="logo">
+          <a href="main.html"><img src="../../assets/logo/logo-light.svg"></a>
+        </div>
+
+        <!-- SOCIALS -->
+        <div id="socials">
+          <a href="https://github.com/Dtar380"><img src="../../assets/icons/github-light.svg"></a>
+          <a href="https://youtube.com/@dtar380"><img src="../../assets/icons/youtube-light.svg"></a>
+          <a href="https://twitch.tv/dtar380_yt"><img src="../../assets/icons/twitch-light.svg"></a>
+        </div>
+
+        <!-- LINKS -->
+        <div id="links">
+          <a href="api.html">API</a>
+          <a href="https://github.com/Dtar380/Valorant-Statistics/blob/main/SECURITY.md">Security Policy</a>
+          <a href="https://github.com/Dtar380/Valorant-Statistics">Repository</a>
+        </div>
+
+      </div>
+
+      <!-- COPYRIGHT -->
+      <div id="copyright">
+        Copyright© 2023 Dtar380. All rights reserved.
+      </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="../../js/body/api.js"></script>
+    <script type="text/javascript" src="../../js/body/language.js"></script>
+    <script type="text/javascript" src="../../js/body/theme.js"></script>
+
+  </body>
+
+</html>
