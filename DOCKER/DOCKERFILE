@@ -1,0 +1,18 @@
+# Set working environment
+FROM python:3.12.7-alpine
+
+# Set the working directory
+WORKDIR /app
+
+# Get dependencies
+COPY ./requirements.txt ./requirements.txt
+
+# Install dependencies
+RUN python3 -m pip install --upgrade pip
+RUN pip3 install -r requirements.txt
+
+# Copy files
+COPY ./BACKEND ./
+
+# Run
+CMD python main.py

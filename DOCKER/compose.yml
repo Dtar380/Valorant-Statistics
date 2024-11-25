@@ -1,0 +1,13 @@
+version: "3"
+
+service:
+
+  api:
+    build: .
+    env_file:
+      - path: ./.env
+        required: true
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app

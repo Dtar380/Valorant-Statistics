@@ -113,4 +113,4 @@ def get_combination(query_type: str, return_type: str, conditions: dict):
     return JSONResponse(content=response)
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000)
