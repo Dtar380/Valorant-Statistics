@@ -40,7 +40,7 @@ const query_response_selector = query_response.querySelector(".selector ul");
 function fill_code(item, code, language) {
     let code_block = item.querySelector("#code"); // Get code block
 
-    code_block.innerHTML = code; // Fill with code
+    code_block.textContent = "\n" + code; // Fill with code
     if (language != "json"){
         code_block.setAttribute("class", language); // Set language
     }
@@ -54,7 +54,7 @@ function get_selected(item, selector) {
     // Get selected language
     let language = item.querySelector(".highlight").getAttribute("id");
     // Get code from data dictionary
-    let code = data[name][type][language]
+    let code = data[name][type][language].join('\n')
 
     fill_code(item, code, language); // Fill with the extracted code
 }
